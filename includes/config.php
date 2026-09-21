@@ -20,7 +20,7 @@ return [
     'org_url'         => 'https://nivishefoundation.org',
     'programme_name'  => 'Play for Healing and Learning (PHL) Fellowship 2026',
     'programme_short' => 'PHL Fellowship 2026',
-    'meta_description' => 'A 12-week fellowship (October to December 2026) for teachers, early childhood educators, caregivers and community leaders in 10 Kenyan counties. Help children play, heal and learn through play.',
+    'meta_description' => 'A 12-week fellowship (mid-October 2026 to mid-January 2027) for teachers, early childhood educators, caregivers and community leaders in 10 Kenyan counties. Help children play, heal and learn through play.',
 
     /* Absolute URL of this page once it is live. Used for social sharing tags.
        Leave empty and it will be detected automatically. */
@@ -36,9 +36,9 @@ return [
      | Dates — used for the countdown and the "applications closed" state
      * ------------------------------------------------------------------ */
     'timezone'        => 'Africa/Nairobi',
-    'deadline'        => '2026-09-30 23:59:59',   // applications close
-    'deadline_label'  => '30th September 2026',
-    'programme_dates' => 'October to December 2026',
+    'deadline'        => '2026-10-05 23:59:59',   // applications close
+    'deadline_label'  => '5th October 2026',
+    'programme_dates' => 'mid-October 2026 to mid-January 2027',
     'duration'        => '12 weeks',           // used as a noun: "over 12 weeks"
     'duration_adj'    => '12-week',            // used as an adjective: "a 12-week fellowship"
     'weekly_time'     => '2–3 hours every week, delivered online',
@@ -46,7 +46,7 @@ return [
     /* ------------------------------------------------------------------
      | Contact
      * ------------------------------------------------------------------ */
-    'contact_email'   => 'mariamy@nivishefoundation.org',
+    'contact_email'   => 'info@nivishefoundation.org',
 
     /* Built-in enquiry form. Set to false to show a plain mailto link instead.
        Requires PHP mail() to be enabled on your cPanel account (it usually is). */

@@ -91,7 +91,7 @@ like `<!-- ===== WHO SHOULD APPLY ===== -->`.
 
 ### The countdown is automatic
 
-The hero shows "9 days left — applications close 30th September 2026", counting down on
+The hero shows "14 days left — applications close 5th October 2026", counting down on
 its own. Once `deadline` passes, every Apply button switches to "Applications closed" and
 the page invites people to email about the next cohort. Nothing to do on the day.
 
