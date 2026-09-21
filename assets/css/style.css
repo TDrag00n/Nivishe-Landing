@@ -425,6 +425,41 @@ img, svg { max-width: 100%; }
 /* ------------------------------------------------------- why it matters - */
 .section-why { background: var(--white); }
 
+.why-text { max-width: 800px; margin: 0 0 clamp(36px, 5vw, 56px); }
+
+/* One wide frame over a pair, so the three photographs read as a set rather
+   than repeating the three-card rhythm of the section below. */
+.photo-mosaic {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.photo-mosaic picture {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.photo-mosaic img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mosaic-wide { grid-column: 1 / -1; }
+.mosaic-wide img { aspect-ratio: 16 / 7; }
+.photo-mosaic picture:not(.mosaic-wide) img { aspect-ratio: 3 / 2; }
+
+.photo-mosaic figcaption {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  font-size: .88rem;
+  color: var(--ink-500);
+  padding-left: 14px;
+  border-left: 3px solid var(--brand-200);
+}
+
 /* ---------------------------------------------------------- model cards - */
 .section-model { background: var(--surface); }
 
@@ -877,6 +912,8 @@ img, svg { max-width: 100%; }
   .county-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .exchange-grid { grid-template-columns: 1fr; }
   .hero { min-height: 0; }
+  .photo-mosaic { grid-template-columns: 1fr; gap: 14px; }
+  .mosaic-wide img { aspect-ratio: 16 / 9; }
   .hero-media img { object-position: 50% 28%; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }

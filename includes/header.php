@@ -31,7 +31,7 @@ $isOpen    = applications_open();
 
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/css/style.css?v=4">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
 
 <script type="application/ld+json">
 <?= json_encode([

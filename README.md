@@ -65,6 +65,9 @@ assets/
   img/favicon.png             Browser tab icon
   img/apple-touch-icon.png    Icon when saved to a phone home screen
   img/cohort.*                Hero photo — a past cohort with their certificates
+  img/classroom.*             "Why this matters" — classroom session
+  img/circle.*                "Why this matters" — children holding hands
+  img/play.*                  "Why this matters" — outdoor play session
   img/session.*               Photo in "About the Fellowship"
   img/certificate.*           Photo in "What Fellows receive"
 .htaccess               Compression, caching, security headers, HTTPS switch

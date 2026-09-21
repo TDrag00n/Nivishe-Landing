@@ -96,19 +96,49 @@ require __DIR__ . '/includes/header.php';
 
   <!-- ====================== WHY THIS MATTERS ====================== -->
   <section class="section section-why" id="why">
-    <div class="container narrow reveal">
-      <p class="section-eyebrow">Why this matters</p>
-      <h2 class="section-title">The adults closest to children are asked to help &mdash; often without the tools to do it.</h2>
-      <p class="lead-text">
-        Many children in Kenya grow up facing displacement, family stress, loss, climate shocks and
-        limited access to quality education. These experiences affect how children learn, build
-        relationships, and manage their emotions.
-      </p>
-      <p class="lead-text">
-        The adults closest to them, including teachers, caregivers and community leaders, are often
-        expected to help without the tools or training to do so.
-        <strong>The PHL Fellowship exists to close that gap.</strong>
-      </p>
+    <div class="container">
+      <div class="why-text reveal">
+        <p class="section-eyebrow">Why this matters</p>
+        <h2 class="section-title">The adults closest to children are asked to help &mdash; often without the tools to do it.</h2>
+        <p class="lead-text">
+          Many children in Kenya grow up facing displacement, family stress, loss, climate shocks and
+          limited access to quality education. These experiences affect how children learn, build
+          relationships, and manage their emotions.
+        </p>
+        <p class="lead-text">
+          The adults closest to them, including teachers, caregivers and community leaders, are often
+          expected to help without the tools or training to do so.
+          <strong>The PHL Fellowship exists to close that gap.</strong>
+        </p>
+      </div>
+
+      <figure class="photo-mosaic reveal">
+        <picture class="mosaic-wide">
+          <source type="image/webp" media="(max-width: 700px)" srcset="assets/img/classroom-sm.webp">
+          <source type="image/webp" srcset="assets/img/classroom.webp">
+          <source media="(max-width: 700px)" srcset="assets/img/classroom-sm.jpg">
+          <img src="assets/img/classroom.jpg" width="1400" height="788" loading="lazy" decoding="async"
+               alt="A full classroom of pupils working at their desks while a facilitator leads the session.">
+        </picture>
+
+        <picture>
+          <source type="image/webp" media="(max-width: 700px)" srcset="assets/img/circle-sm.webp">
+          <source type="image/webp" srcset="assets/img/circle.webp">
+          <source media="(max-width: 700px)" srcset="assets/img/circle-sm.jpg">
+          <img src="assets/img/circle.jpg" width="900" height="509" loading="lazy" decoding="async"
+               alt="Children standing outdoors holding hands in a wide circle.">
+        </picture>
+
+        <picture>
+          <source type="image/webp" media="(max-width: 700px)" srcset="assets/img/play-sm.webp">
+          <source type="image/webp" srcset="assets/img/play.webp">
+          <source media="(max-width: 700px)" srcset="assets/img/play-sm.jpg">
+          <img src="assets/img/play.jpg" width="900" height="600" loading="lazy" decoding="async"
+               alt="Children facing each other in a clapping game during an outdoor play session.">
+        </picture>
+
+        <figcaption>Children in Nivishe play and learning sessions.</figcaption>
+      </figure>
     </div>
   </section>
 
