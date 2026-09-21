@@ -23,13 +23,11 @@ $isOpen    = applications_open();
 <meta property="og:url" content="<?= e(site_url()) ?>/">
 <meta property="og:site_name" content="<?= e(cfg('org_name')) ?>">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0f5c52">
+<meta name="theme-color" content="#ea580c">
 
-<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=1">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
 
 <script type="application/ld+json">
 <?= json_encode([
@@ -57,15 +55,12 @@ $isOpen    = applications_open();
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="38" height="38" role="img" focusable="false">
-          <circle cx="20" cy="20" r="19" fill="#0f5c52"/>
-          <path d="M20 29.5s-8.2-4.7-8.2-10.4a4.6 4.6 0 0 1 8.2-2.9 4.6 4.6 0 0 1 8.2 2.9c0 5.7-8.2 10.4-8.2 10.4Z" fill="#f6b23c"/>
-        </svg>
-      </span>
-      <span class="brand-text">
+      <img class="brand-logo" src="assets/img/nivishe-logo.png" width="760" height="332"
+           alt="<?= e(cfg('org_name')) ?>">
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-programme">
         <strong>PHL Fellowship</strong>
-        <small><?= e(cfg('org_name')) ?></small>
+        <small>2026 Cohort</small>
       </span>
     </a>
 

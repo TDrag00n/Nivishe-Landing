@@ -1,8 +1,9 @@
 # PHL Fellowship 2026 — landing page (PHP)
 
 A single-page PHP version of the Play for Healing and Learning (PHL) Fellowship 2026
-landing page, built from the approved copy document. It is plain PHP, HTML, CSS and
-JavaScript — no frameworks, no build step, no database. Upload it to cPanel and it works.
+landing page, built from the approved copy document and themed to match
+nivishefoundation.org. It is plain PHP, HTML, CSS and JavaScript — no frameworks, no
+build step, no database. Upload it to cPanel and it works.
 
 ---
 
@@ -52,9 +53,12 @@ includes/
   footer.php            Footer + data-management note
   .htaccess             Blocks direct web access to the files above
 assets/
-  css/style.css         All styling
+  css/style.css         All styling (brand colours are variables at the top)
   js/main.js            Mobile menu, scroll effects (page works without it)
-  img/favicon.svg       Browser tab icon
+  img/nivishe-logo.png        Logo for the header (dark)
+  img/nivishe-logo-white.png  Logo for the dark footer
+  img/favicon.png             Browser tab icon
+  img/apple-touch-icon.png    Icon when saved to a phone home screen
 .htaccess               Compression, caching, security headers, HTTPS switch
 README.md               This file
 ```
@@ -129,10 +133,29 @@ Then open <http://localhost:8000>.
 
 ---
 
+## 8. Brand theme
+
+The page uses the same design system as nivishefoundation.org:
+
+| Element | Value |
+|---|---|
+| Brand orange | `#EA580C`, hover `#C2410C` |
+| Page backgrounds | `#faf9f6` and `#fffcf9` (the warm off-whites from the main site) |
+| Dark sections & footer | gray-900 `#111827` to black |
+| Buttons | solid orange, bold white text, fully rounded pills |
+| Typeface | the system sans-serif stack — the same one the main site uses, so no
+  webfont is downloaded and the page loads faster |
+
+Every colour is a CSS variable in the first 40 lines of `assets/css/style.css`.
+Change `--brand` there and the whole page follows.
+
+The logo files were taken from the main site's `/images/logo.png` and prepared for web
+use: cropped, resized, and supplied in dark and white versions.
+
 ## Notes
 
-- Fonts load from Google Fonts. If a visitor's connection blocks them, the page falls
-  back to clean system fonts and still looks right.
+- No webfonts, no external scripts, no trackers — everything except the Apply link is
+  served from your own hosting.
 - The page is responsive down to small phones, keyboard-navigable, screen-reader
   friendly, and respects "reduce motion" settings.
 - All content is rendered server-side, so search engines index the full text.

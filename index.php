@@ -51,7 +51,7 @@ require __DIR__ . '/includes/header.php';
       </p>
 
       <p class="hero-sub">
-        A <?= e(cfg('duration')) ?> fellowship, <?= e(cfg('programme_dates')) ?>, for teachers,
+        A <?= e(cfg('duration_adj')) ?> fellowship, <?= e(cfg('programme_dates')) ?>, for teachers,
         early childhood educators, caregivers and community leaders in 10 Kenyan counties.
       </p>
 

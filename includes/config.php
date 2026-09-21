@@ -38,7 +38,8 @@ return [
     'deadline'        => '2026-09-30 23:59:59',   // applications close
     'deadline_label'  => '30th September 2026',
     'programme_dates' => 'October to December 2026',
-    'duration'        => '12 weeks',
+    'duration'        => '12 weeks',           // used as a noun: "over 12 weeks"
+    'duration_adj'    => '12-week',            // used as an adjective: "a 12-week fellowship"
     'weekly_time'     => '2–3 hours every week, delivered online',
 
     /* ------------------------------------------------------------------

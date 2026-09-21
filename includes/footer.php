@@ -7,12 +7,8 @@ if (!defined('PHL_APP')) {
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="40" height="40" role="img" focusable="false">
-          <circle cx="20" cy="20" r="19" fill="#f6b23c"/>
-          <path d="M20 29.5s-8.2-4.7-8.2-10.4a4.6 4.6 0 0 1 8.2-2.9 4.6 4.6 0 0 1 8.2 2.9c0 5.7-8.2 10.4-8.2 10.4Z" fill="#0f5c52"/>
-        </svg>
-      </span>
+      <img class="footer-logo" src="assets/img/nivishe-logo-white.png" width="760" height="332"
+           alt="<?= e(cfg('org_name')) ?>">
       <p class="footer-title"><?= e(cfg('programme_name')) ?></p>
       <p class="footer-desc">Helping children aged 6 to 12 play, heal and learn — through trauma-informed play, storytelling and community support.</p>
     </div>
@@ -47,6 +43,6 @@ if (!defined('PHL_APP')) {
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=1" defer></script>
+<script src="assets/js/main.js?v=2" defer></script>
 </body>
 </html>
