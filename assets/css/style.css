@@ -190,18 +190,20 @@ img, svg { max-width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  text-decoration: none;
   color: var(--ink);
   flex: none;
   padding: 8px 0;
 }
+/* The logo goes to the foundation's own site; the wordmark beside it returns
+   to the top of this page. */
+.brand-link { display: inline-flex; border-radius: var(--radius-sm); }
 .brand-logo {
   height: 46px;
   width: auto;
   display: block;
   transition: transform .2s ease;
 }
-.brand:hover .brand-logo { transform: scale(1.04); }
+.brand-link:hover .brand-logo { transform: scale(1.04); }
 
 .brand-divider {
   width: 1px;
@@ -213,8 +215,16 @@ img, svg { max-width: 100%; }
   display: flex;
   flex-direction: column;
   line-height: 1.2;
+  text-decoration: none;
+  color: inherit;
 }
-.brand-programme strong { font-size: 1rem; font-weight: 700; color: var(--ink); }
+.brand-programme strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  transition: color .18s ease;
+}
+.brand-programme:hover strong { color: var(--brand); }
 .brand-programme small { font-size: .74rem; color: var(--ink-500); letter-spacing: .04em; text-transform: uppercase; }
 
 .site-nav { margin-left: auto; }
@@ -806,7 +816,14 @@ img, svg { max-width: 100%; }
   gap: clamp(28px, 5vw, 56px);
   padding-bottom: 36px;
 }
-.footer-logo { height: 52px; width: auto; display: block; margin-bottom: 18px; }
+.footer-logo-link { display: inline-block; margin-bottom: 18px; border-radius: var(--radius-sm); }
+.footer-logo {
+  height: 52px;
+  width: auto;
+  display: block;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.footer-logo-link:hover .footer-logo { transform: scale(1.04); opacity: .9; }
 .footer-title {
   font-size: 1.1rem;
   font-weight: 700;

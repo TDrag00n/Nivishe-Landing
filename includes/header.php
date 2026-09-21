@@ -31,7 +31,7 @@ $isOpen    = applications_open();
 
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/css/style.css?v=3">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
 
 <script type="application/ld+json">
 <?= json_encode([
@@ -58,15 +58,18 @@ $isOpen    = applications_open();
 
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <a class="brand" href="#top">
-      <img class="brand-logo" src="assets/img/nivishe-logo.png" width="760" height="332"
-           alt="<?= e(cfg('org_name')) ?>">
+    <div class="brand">
+      <a class="brand-link" href="<?= e(cfg('org_url')) ?>" target="_blank" rel="noopener"
+         aria-label="<?= e(cfg('org_name')) ?> home page (opens in a new tab)">
+        <img class="brand-logo" src="assets/img/nivishe-logo.png" width="760" height="332"
+             alt="<?= e(cfg('org_name')) ?>">
+      </a>
       <span class="brand-divider" aria-hidden="true"></span>
-      <span class="brand-programme">
+      <a class="brand-programme" href="#top">
         <strong>PHL Fellowship</strong>
         <small>2026 Cohort</small>
-      </span>
-    </a>
+      </a>
+    </div>
 
     <nav class="site-nav" id="siteNav" aria-label="Main">
       <ul>

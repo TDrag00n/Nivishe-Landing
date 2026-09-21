@@ -7,8 +7,11 @@ if (!defined('PHL_APP')) {
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <img class="footer-logo" src="assets/img/nivishe-logo-white.png" width="760" height="332"
-           alt="<?= e(cfg('org_name')) ?>">
+      <a class="footer-logo-link" href="<?= e(cfg('org_url')) ?>" target="_blank" rel="noopener"
+         aria-label="<?= e(cfg('org_name')) ?> home page (opens in a new tab)">
+        <img class="footer-logo" src="assets/img/nivishe-logo-white.png" width="760" height="332"
+             alt="<?= e(cfg('org_name')) ?>">
+      </a>
       <p class="footer-title"><?= e(cfg('programme_name')) ?></p>
       <p class="footer-desc">Helping children aged 6 to 12 play, heal and learn — through trauma-informed play, storytelling and community support.</p>
     </div>
