@@ -37,7 +37,14 @@ require __DIR__ . '/includes/header.php';
 
   <!-- ============================ HERO ============================ -->
   <section class="hero" id="top">
-    <div class="hero-glow" aria-hidden="true"></div>
+    <picture class="hero-media">
+      <source type="image/webp" media="(max-width: 700px)" srcset="assets/img/cohort-sm.webp">
+      <source type="image/webp" srcset="assets/img/cohort.webp">
+      <source media="(max-width: 700px)" srcset="assets/img/cohort-sm.jpg">
+      <img src="assets/img/cohort.jpg" width="1210" height="587" fetchpriority="high" decoding="async"
+           alt="A previous Nivishe Fellowship cohort standing together with their certificates of completion.">
+    </picture>
+    <div class="hero-scrim" aria-hidden="true"></div>
     <div class="container hero-inner">
       <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><?= e(cfg('org_name')) ?> &middot; Cohort 2026</p>
 
@@ -73,6 +80,11 @@ require __DIR__ . '/includes/header.php';
       </p>
       <p class="deadline-note">Applications are reviewed on a rolling basis, so early applications are encouraged.</p>
 
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="container">
       <ul class="hero-stats">
         <li><strong>12</strong><span>weeks of training</span></li>
         <li><strong>10</strong><span>Kenyan counties</span></li>
@@ -162,6 +174,17 @@ require __DIR__ . '/includes/header.php';
             <li>Recognize when a child needs further help, and refer them safely</li>
             <li>Join a network of practitioners working across 10 counties</li>
           </ul>
+
+          <figure class="side-photo">
+            <picture>
+              <source type="image/webp" media="(max-width: 700px)" srcset="assets/img/session-sm.webp">
+              <source type="image/webp" srcset="assets/img/session.webp">
+              <source media="(max-width: 700px)" srcset="assets/img/session-sm.jpg">
+              <img src="assets/img/session.jpg" width="1260" height="820" loading="lazy" decoding="async"
+                   alt="Fellows listening during a Nivishe training session.">
+            </picture>
+            <figcaption>Fellows from a previous Nivishe cohort in session. The 2026 Fellowship is delivered online.</figcaption>
+          </figure>
         </div>
 
         <aside class="split-aside reveal">
@@ -217,27 +240,40 @@ require __DIR__ . '/includes/header.php';
   <section class="section section-exchange">
     <div class="container">
       <div class="exchange-grid">
-        <article class="exchange-card receive reveal">
-          <p class="section-eyebrow">What Fellows receive</p>
-          <h2>Everything you need to start</h2>
-          <ul class="icon-list">
-            <li>Practical training in play-based psychosocial support</li>
-            <li>PHL materials, including the Brain Wave Mental Health Chronicles</li>
-            <li>Supervision and ongoing support from the Nivishe team</li>
-            <li>A certificate of completion</li>
-          </ul>
-        </article>
+        <figure class="exchange-photo reveal">
+          <picture>
+            <source type="image/webp" media="(max-width: 700px)" srcset="assets/img/certificate-sm.webp">
+            <source type="image/webp" srcset="assets/img/certificate.webp">
+            <source media="(max-width: 700px)" srcset="assets/img/certificate-sm.jpg">
+            <img src="assets/img/certificate.jpg" width="1260" height="824" loading="lazy" decoding="async"
+                 alt="A Fellow receiving her certificate of completion from the Nivishe team.">
+          </picture>
+          <figcaption>Every Fellow who completes the 12 weeks receives a certificate.</figcaption>
+        </figure>
 
-        <article class="exchange-card commit reveal">
-          <p class="section-eyebrow">What Fellows commit to</p>
-          <h2>What we ask of you</h2>
-          <ul class="icon-list">
-            <li>Attending all training sessions over the 12 weeks</li>
-            <li>Signing the Fellowship agreement and the Nivishe Code of Conduct</li>
-            <li>Always following Nivishe safeguarding and referral procedures</li>
+        <div class="exchange-cards">
+          <article class="exchange-card receive reveal">
+            <p class="section-eyebrow">What Fellows receive</p>
+            <h2>Everything you need to start</h2>
+            <ul class="icon-list">
+              <li>Practical training in play-based psychosocial support</li>
+              <li>PHL materials, including the Brain Wave Mental Health Chronicles</li>
+              <li>Supervision and ongoing support from the Nivishe team</li>
+              <li>A certificate of completion</li>
+            </ul>
+          </article>
+
+          <article class="exchange-card commit reveal">
+            <p class="section-eyebrow">What Fellows commit to</p>
+            <h2>What we ask of you</h2>
+            <ul class="icon-list">
+              <li>Attending all training sessions over the 12 weeks</li>
+              <li>Signing the Fellowship agreement and the Nivishe Code of Conduct</li>
+              <li>Always following Nivishe safeguarding and referral procedures</li>
             <li>Taking part in data collection that helps Nivishe measure the programme&rsquo;s impact</li>
-          </ul>
-        </article>
+            </ul>
+          </article>
+        </div>
       </div>
     </div>
   </section>

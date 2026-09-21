@@ -64,6 +64,9 @@ assets/
   img/nivishe-logo-white.png  Logo for the dark footer
   img/favicon.png             Browser tab icon
   img/apple-touch-icon.png    Icon when saved to a phone home screen
+  img/cohort.*                Hero photo — a past cohort with their certificates
+  img/session.*               Photo in "About the Fellowship"
+  img/certificate.*           Photo in "What Fellows receive"
 .htaccess               Compression, caching, security headers, HTTPS switch
 README.md               This file
 ```
@@ -138,7 +141,26 @@ Then open <http://localhost:8000>.
 
 ---
 
-## 8. Brand theme
+## 8. Replacing the photographs
+
+Each photo ships in four files — a full-size and a small version, each as `.webp`
+(modern, small) and `.jpg` (fallback):
+
+```
+cohort.webp / cohort.jpg / cohort-sm.webp / cohort-sm.jpg
+```
+
+Phones get the `-sm` version, so the page stays quick on mobile data. To swap a
+photo, replace all four files, keeping the names. Useful sizes: **1210px wide** for
+the full version and **760px** for the small one, saved at about 80% quality.
+
+The hero photo is also the image that appears when someone shares the page on
+WhatsApp, Facebook or LinkedIn.
+
+Captions and the alt text (the description screen readers announce) sit next to
+each `<picture>` block in `index.php`.
+
+## 9. Brand theme
 
 The page uses the same design system as nivishefoundation.org:
 

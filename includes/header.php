@@ -22,12 +22,16 @@ $isOpen    = applications_open();
 <meta property="og:description" content="<?= e(cfg('meta_description')) ?>">
 <meta property="og:url" content="<?= e(site_url()) ?>/">
 <meta property="og:site_name" content="<?= e(cfg('org_name')) ?>">
+<meta property="og:image" content="<?= e(site_url()) ?>/assets/img/cohort.jpg">
+<meta property="og:image:width" content="1210">
+<meta property="og:image:height" content="587">
+<meta property="og:image:alt" content="A previous Nivishe Fellowship cohort with their certificates of completion.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ea580c">
 
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 
 <script type="application/ld+json">
 <?= json_encode([
