@@ -27,9 +27,10 @@ return [
     'site_url'        => '',
 
     /* ------------------------------------------------------------------
-     | The Apply button  ***  REPLACE THIS WITH YOUR GOOGLE FORM LINK  ***
+     | The Apply button — every "Apply Now" on the page points here.
+     | Use the form's /viewform address, never the /edit one.
      * ------------------------------------------------------------------ */
-    'apply_url'       => 'https://forms.gle/REPLACE-WITH-YOUR-GOOGLE-FORM',
+    'apply_url'       => 'https://docs.google.com/forms/d/1thyY7_bg9Nc-0eRFIseUAkvMNFK3fnofAr27jPFOngw/viewform',
 
     /* ------------------------------------------------------------------
      | Dates — used for the countdown and the "applications closed" state

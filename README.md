@@ -7,15 +7,20 @@ build step, no database. Upload it to cPanel and it works.
 
 ---
 
-## 1. Before you upload — one thing you MUST change
+## 1. The Apply button
 
-Open `includes/config.php` and replace the placeholder Google Form link:
+Every "Apply Now" button on the page points at one value in `includes/config.php`:
 
 ```php
-'apply_url' => 'https://forms.gle/REPLACE-WITH-YOUR-GOOGLE-FORM',
+'apply_url' => 'https://docs.google.com/forms/d/1thyY.../viewform',
 ```
 
-Every "Apply Now" button on the page points at this one value.
+This is the form's **response** address (`/viewform`), which is what applicants
+need. Never put the `/edit` address here — that one opens the form for editing
+rather than for filling in.
+
+Before you go live, open the link in a private browser window to confirm the form
+accepts responses from people outside your organisation.
 
 ---
 
