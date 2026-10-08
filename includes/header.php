@@ -6,9 +6,6 @@ if (!defined('NIVISHE_APP')) {
 
 /* Each page may set these before including this file; the Fellowship landing
    page's values are the defaults. */
-$applyUrl ??= cfg('apply_url');
-$isOpen   ??= applications_open();
-
 $pageTitle       ??= cfg('programme_name') . ' | ' . cfg('org_name');
 $pageDescription ??= cfg('meta_description');
 $pagePath        ??= '/';
@@ -22,11 +19,14 @@ $navItems        ??= [
     '#dates'       => 'Key dates',
     '#faq'         => 'FAQs',
 ];
-$headerCta ??= [
-    'label'    => $isOpen ? 'Apply Now' : 'Applications closed',
-    'url'      => $applyUrl,
-    'external' => $isOpen,
-];
+if (!isset($headerCta)) {
+    $open      = applications_open();
+    $headerCta = [
+        'label'    => $open ? 'Apply Now' : 'Applications closed',
+        'url'      => cfg('apply_url'),
+        'external' => $open,
+    ];
+}
 $ogImage ??= [
     'path' => 'assets/img/cohort.jpg',
     'w'    => 1210,
