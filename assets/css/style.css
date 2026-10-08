@@ -896,6 +896,239 @@ img, svg { max-width: 100%; }
 .footer-bottom a { color: #d1d5db; text-decoration: none; }
 .footer-bottom a:hover { color: var(--brand-400); }
 
+
+/* ======================================================================
+   Careers page (careers.php)
+   ====================================================================== */
+
+/* ------------------------------------------------------------ hero ----- */
+.page-hero {
+  background: linear-gradient(to bottom right, var(--brand-50), var(--white) 62%);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(48px, 7vw, 86px) 0 clamp(44px, 6vw, 72px);
+}
+.page-hero-inner {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(28px, 5vw, 60px);
+  align-items: center;
+}
+.eyebrow-light {
+  background: var(--white);
+  border-color: var(--brand-200);
+  color: var(--brand-hover);
+  backdrop-filter: none;
+  box-shadow: var(--shadow-sm);
+}
+.page-hero-title {
+  font-size: clamp(2rem, 4.6vw, 3.3rem);
+  letter-spacing: -.03em;
+  margin-bottom: .4em;
+  text-wrap: balance;
+}
+.page-hero-lead {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  color: var(--ink-800);
+  font-weight: 500;
+  max-width: 46ch;
+  margin-bottom: .7em;
+}
+.page-hero-sub {
+  font-size: 1.02rem;
+  color: var(--ink-500);
+  max-width: 54ch;
+  margin-bottom: 1.8em;
+}
+.page-hero-figure { margin: 0; }
+.page-hero-figure picture {
+  display: block;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+.page-hero-figure img { display: block; width: 100%; height: auto; }
+
+/* ------------------------------------------------------ role listing --- */
+.section-roles { background: var(--surface); }
+
+.job-list { display: grid; gap: 22px; }
+
+.job-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  scroll-margin-top: calc(var(--header-h) + 20px);
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.job-card:hover { border-color: var(--brand-200); box-shadow: var(--shadow-lg); }
+.job-card:target { border-color: var(--brand); box-shadow: var(--shadow-xl); }
+
+.job-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: start;
+  padding: clamp(24px, 3.5vw, 36px);
+}
+
+.job-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+}
+.chip {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--ink-600);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  padding: 5px 12px;
+}
+.chip-type {
+  color: var(--brand-hover);
+  background: var(--brand-50);
+  border-color: var(--brand-200);
+}
+.chip-closes { color: var(--brand-deep); background: var(--brand-100); border-color: var(--brand-200); }
+
+.job-title { font-size: clamp(1.3rem, 2.4vw, 1.65rem); margin-bottom: .45em; }
+.job-summary { color: var(--ink-600); max-width: 70ch; margin-bottom: 1em; }
+
+.job-highlights { list-style: none; margin: 0; padding: 0; }
+.job-highlights li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 9px;
+  font-size: .96rem;
+  color: var(--ink-600);
+}
+.job-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 4px; top: .55em;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 4px rgba(234, 88, 12, .15);
+}
+
+.job-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  min-width: 170px;
+}
+.job-actions .btn { justify-content: center; }
+.job-share {
+  font-size: .84rem;
+  color: var(--ink-500);
+  text-align: center;
+  text-decoration: none;
+}
+.job-share:hover { color: var(--brand); text-decoration: underline; }
+
+/* ------------------------------------------------ terms of reference --- */
+.job-details { border-top: 1px solid var(--line); background: var(--surface-alt); }
+.job-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px clamp(24px, 3.5vw, 36px);
+  cursor: pointer;
+  font-size: .96rem;
+  font-weight: 700;
+  color: var(--brand-hover);
+  list-style: none;
+}
+.job-details summary::-webkit-details-marker { display: none; }
+.job-details summary:hover { background: var(--brand-50); }
+.job-details[open] summary { border-bottom: 1px solid var(--line); }
+.job-details[open] .faq-chevron { transform: rotate(180deg); }
+
+.tor { padding: clamp(22px, 3.5vw, 34px) clamp(24px, 3.5vw, 36px) clamp(26px, 3.5vw, 36px); }
+.tor-block { margin-bottom: 30px; }
+.tor-block:last-of-type { margin-bottom: 20px; }
+.tor-block h4 {
+  font-size: .8rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: .9em;
+  padding-bottom: .7em;
+  border-bottom: 1px solid var(--line);
+}
+.tor-block h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1.4em 0 .5em;
+  letter-spacing: -.01em;
+}
+.tor-block h5:first-of-type { margin-top: 0; }
+.tor-block p { color: var(--ink-600); max-width: 76ch; }
+
+.tor-list { list-style: none; margin: 0 0 1em; padding: 0; }
+.tor-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 8px;
+  font-size: .97rem;
+  color: var(--ink-600);
+  max-width: 76ch;
+}
+.tor-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px; top: .62em;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--brand-400);
+}
+.tor-cta { margin: 0; }
+
+/* --------------------------------------------- how to apply (careers) -- */
+.apply-roles {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+.apply-roles li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+}
+.apply-role-name { font-weight: 600; color: #fff; }
+
+@media (max-width: 900px) {
+  .page-hero-inner { grid-template-columns: 1fr; }
+  .page-hero-figure { order: -1; }
+  .job-head { grid-template-columns: 1fr; }
+  .job-actions { flex-direction: row; align-items: center; min-width: 0; }
+  .job-actions .btn { flex: 1; }
+}
+
+@media (max-width: 640px) {
+  .job-actions { flex-direction: column; align-items: stretch; }
+  .apply-roles li { justify-content: flex-start; }
+}
+
 /* ------------------------------------------------------ reveal on scroll */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }

@@ -44,6 +44,13 @@ return [
     'weekly_time'     => '2–3 hours every week, delivered online',
 
     /* ------------------------------------------------------------------
+     | Careers page (careers.php) — the roles themselves live in jobs.php
+     * ------------------------------------------------------------------ */
+    /* The date search engines treat as the posting date for every open role.
+       Update it when you post a new batch. */
+    'jobs_posted_date' => '2026-10-08',
+
+    /* ------------------------------------------------------------------
      | Contact
      * ------------------------------------------------------------------ */
     'contact_email'   => 'info@nivishefoundation.org',

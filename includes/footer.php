@@ -3,6 +3,21 @@ if (!defined('PHL_APP')) {
     http_response_code(403);
     exit('Direct access is not permitted.');
 }
+
+/* Pages may override these; the Fellowship landing page's values are defaults. */
+$footerTitle ??= cfg('programme_name');
+$footerDesc  ??= 'Helping children aged 6 to 12 play, heal and learn — through trauma-informed play, storytelling and community support.';
+$footerLinks ??= [
+    '#why'         => 'Why this matters',
+    '#model'       => 'The PHL model',
+    '#fellowship'  => 'About the Fellowship',
+    '#eligibility' => 'Who should apply',
+    '#apply'       => 'How to apply',
+    '#faq'         => 'FAQs',
+    'careers.php'  => 'Careers',
+];
+$footerDataNote ??= 'Your information will be used only to assess your application, in line with '
+    . e(cfg('org_name')) . '&rsquo;s data protection practices.';
 ?>
 <footer class="site-footer">
   <div class="container footer-inner">
@@ -12,19 +27,16 @@ if (!defined('PHL_APP')) {
         <img class="footer-logo" src="assets/img/nivishe-logo-white.png" width="760" height="332"
              alt="<?= e(cfg('org_name')) ?>">
       </a>
-      <p class="footer-title"><?= e(cfg('programme_name')) ?></p>
-      <p class="footer-desc">Helping children aged 6 to 12 play, heal and learn — through trauma-informed play, storytelling and community support.</p>
+      <p class="footer-title"><?= e($footerTitle) ?></p>
+      <p class="footer-desc"><?= e($footerDesc) ?></p>
     </div>
 
     <div class="footer-col">
       <h2>Explore</h2>
       <ul>
-        <li><a href="#why">Why this matters</a></li>
-        <li><a href="#model">The PHL model</a></li>
-        <li><a href="#fellowship">About the Fellowship</a></li>
-        <li><a href="#eligibility">Who should apply</a></li>
-        <li><a href="#apply">How to apply</a></li>
-        <li><a href="#faq">FAQs</a></li>
+        <?php foreach ($footerLinks as $href => $label): ?>
+          <li><a href="<?= e($href) ?>"><?= e($label) ?></a></li>
+        <?php endforeach; ?>
       </ul>
     </div>
 
@@ -36,7 +48,7 @@ if (!defined('PHL_APP')) {
       </ul>
 
       <h2 class="footer-h-spaced">Data management</h2>
-      <p class="footer-fineprint">Your information will be used only to assess your application, in line with <?= e(cfg('org_name')) ?>&rsquo;s data protection practices.</p>
+      <p class="footer-fineprint"><?= $footerDataNote ?></p>
     </div>
   </div>
 
@@ -46,6 +58,6 @@ if (!defined('PHL_APP')) {
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2" defer></script>
+<script src="assets/js/main.js?v=3" defer></script>
 </body>
 </html>

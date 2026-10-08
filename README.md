@@ -1,4 +1,4 @@
-# PHL Fellowship 2026 — landing page (PHP)
+# Nivishe Foundation — PHL Fellowship & Careers pages (PHP)
 
 A single-page PHP version of the Play for Healing and Learning (PHL) Fellowship 2026
 landing page, built from the approved copy document and themed to match
@@ -50,9 +50,11 @@ Set it in cPanel → *MultiPHP Manager* if needed.
 ## 3. What's in the folder
 
 ```
-index.php               The page itself — all sections, in order
+index.php               PHL Fellowship 2026 landing page
+careers.php             Careers page — open roles
 includes/
   config.php            ← edit this: links, dates, email, counties, FAQs
+  jobs.php              ← edit this: the open roles on careers.php
   functions.php         Helpers: countdown, escaping, enquiry-form handling
   header.php            <head>, sticky navigation bar
   footer.php            Footer + data-management note
@@ -132,7 +134,31 @@ Applications themselves still go through the Google Form; this form is only for 
 
 ---
 
-## 7. Testing locally (optional)
+## 7. The careers page
+
+`careers.php` lists the open roles. It shares the header, footer, stylesheet and
+photographs with the Fellowship page, so there is nothing extra to upload.
+
+**All role content lives in `includes/jobs.php`** — one block per role, holding its
+title, engagement type, location, reporting line, application-form link and the
+full terms of reference. To change a role, edit its block.
+
+| Task | What to do in `includes/jobs.php` |
+|---|---|
+| Close a role | Delete its block, or set `'open' => false` to keep it for later |
+| Add a role | Copy an existing block and replace the content |
+| Add a closing date | Fill in `'closes'` (e.g. `'2026-11-30'`). It shows as a chip on the role and nowhere else when left empty |
+| Change where applications go | Edit that role's `'apply_url'` |
+
+Each role has a shareable link — `careers.php#grants-lead`, matching its `'slug'`.
+Opening that link scrolls to the role; linking to `careers.php#tor-grants-lead`
+also expands its terms of reference.
+
+The page publishes JobPosting structured data, which is what lets the roles appear
+in Google's job listings. `jobs_posted_date` in `config.php` is the posting date
+search engines see — update it when you post a new batch of roles.
+
+## 8. Testing locally (optional)
 
 With PHP installed on your computer:
 
@@ -144,7 +170,7 @@ Then open <http://localhost:8000>.
 
 ---
 
-## 8. Replacing the photographs
+## 9. Replacing the photographs
 
 Each photo ships in four files — a full-size and a small version, each as `.webp`
 (modern, small) and `.jpg` (fallback):
@@ -163,7 +189,7 @@ WhatsApp, Facebook or LinkedIn.
 Captions and the alt text (the description screen readers announce) sit next to
 each `<picture>` block in `index.php`.
 
-## 9. Brand theme
+## 10. Brand theme
 
 The page uses the same design system as nivishefoundation.org:
 

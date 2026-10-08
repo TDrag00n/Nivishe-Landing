@@ -4,37 +4,36 @@ if (!defined('PHL_APP')) {
     exit('Direct access is not permitted.');
 }
 
-$pageTitle = cfg('programme_name') . ' | ' . cfg('org_name');
-$applyUrl  = cfg('apply_url');
-$isOpen    = applications_open();
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?= e($pageTitle) ?></title>
-<meta name="description" content="<?= e(cfg('meta_description')) ?>">
-<link rel="canonical" href="<?= e(site_url()) ?>/">
+/* Each page may set these before including this file; the Fellowship landing
+   page's values are the defaults. */
+$applyUrl ??= cfg('apply_url');
+$isOpen   ??= applications_open();
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="<?= e($pageTitle) ?>">
-<meta property="og:description" content="<?= e(cfg('meta_description')) ?>">
-<meta property="og:url" content="<?= e(site_url()) ?>/">
-<meta property="og:site_name" content="<?= e(cfg('org_name')) ?>">
-<meta property="og:image" content="<?= e(site_url()) ?>/assets/img/cohort.jpg">
-<meta property="og:image:width" content="1210">
-<meta property="og:image:height" content="587">
-<meta property="og:image:alt" content="A previous Nivishe Fellowship cohort with their certificates of completion.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#ea580c">
-
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/css/style.css?v=5">
-
-<script type="application/ld+json">
-<?= json_encode([
+$pageTitle       ??= cfg('programme_name') . ' | ' . cfg('org_name');
+$pageDescription ??= cfg('meta_description');
+$pagePath        ??= '/';
+$brandLabel      ??= 'PHL Fellowship';
+$brandSub        ??= '2026 Cohort';
+$navItems        ??= [
+    '#why'         => 'Why it matters',
+    '#model'       => 'The PHL model',
+    '#fellowship'  => 'The Fellowship',
+    '#eligibility' => 'Who should apply',
+    '#dates'       => 'Key dates',
+    '#faq'         => 'FAQs',
+];
+$headerCta ??= [
+    'label'    => $isOpen ? 'Apply Now' : 'Applications closed',
+    'url'      => $applyUrl,
+    'external' => $isOpen,
+];
+$ogImage ??= [
+    'path' => 'assets/img/cohort.jpg',
+    'w'    => 1210,
+    'h'    => 587,
+    'alt'  => 'A previous Nivishe Fellowship cohort with their certificates of completion.',
+];
+$structuredData ??= [
     '@context'    => 'https://schema.org',
     '@type'       => 'EducationalOccupationalProgram',
     'name'        => cfg('programme_name'),
@@ -44,12 +43,40 @@ $isOpen    = applications_open();
         'name'  => cfg('org_name'),
         'url'   => cfg('org_url'),
     ],
-    'url'               => site_url() . '/',
-    'applicationDeadline' => deadline()->format('Y-m-d'),
-    'timeToComplete'    => 'P12W',
+    'url'                    => site_url() . '/',
+    'applicationDeadline'    => deadline()->format('Y-m-d'),
+    'timeToComplete'         => 'P12W',
     'educationalProgramMode' => 'online',
-    'offers'            => ['@type' => 'Offer', 'price' => 0, 'priceCurrency' => 'KES'],
-], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
+    'offers'                 => ['@type' => 'Offer', 'price' => 0, 'priceCurrency' => 'KES'],
+];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?= e($pageTitle) ?></title>
+<meta name="description" content="<?= e($pageDescription) ?>">
+<link rel="canonical" href="<?= e(site_url() . $pagePath) ?>">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?= e($pageTitle) ?>">
+<meta property="og:description" content="<?= e($pageDescription) ?>">
+<meta property="og:url" content="<?= e(site_url() . $pagePath) ?>">
+<meta property="og:site_name" content="<?= e(cfg('org_name')) ?>">
+<meta property="og:image" content="<?= e(site_url() . '/' . $ogImage['path']) ?>">
+<meta property="og:image:width" content="<?= e((string) $ogImage['w']) ?>">
+<meta property="og:image:height" content="<?= e((string) $ogImage['h']) ?>">
+<meta property="og:image:alt" content="<?= e($ogImage['alt']) ?>">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ea580c">
+
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css?v=6">
+
+<script type="application/ld+json">
+<?= json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
 </script>
 </head>
 <body>
@@ -66,24 +93,21 @@ $isOpen    = applications_open();
       </a>
       <span class="brand-divider" aria-hidden="true"></span>
       <a class="brand-programme" href="#top">
-        <strong>PHL Fellowship</strong>
-        <small>2026 Cohort</small>
+        <strong><?= e($brandLabel) ?></strong>
+        <small><?= e($brandSub) ?></small>
       </a>
     </div>
 
     <nav class="site-nav" id="siteNav" aria-label="Main">
       <ul>
-        <li><a href="#why">Why it matters</a></li>
-        <li><a href="#model">The PHL model</a></li>
-        <li><a href="#fellowship">The Fellowship</a></li>
-        <li><a href="#eligibility">Who should apply</a></li>
-        <li><a href="#dates">Key dates</a></li>
-        <li><a href="#faq">FAQs</a></li>
+        <?php foreach ($navItems as $href => $label): ?>
+          <li><a href="<?= e($href) ?>"><?= e($label) ?></a></li>
+        <?php endforeach; ?>
       </ul>
     </nav>
 
-    <a class="btn btn-primary btn-sm header-cta" href="<?= e($applyUrl) ?>"<?= $isOpen ? ' target="_blank" rel="noopener"' : '' ?>>
-      <?= $isOpen ? 'Apply Now' : 'Applications closed' ?>
+    <a class="btn btn-primary btn-sm header-cta" href="<?= e($headerCta['url']) ?>"<?= !empty($headerCta['external']) ? ' target="_blank" rel="noopener"' : '' ?>>
+      <?= e($headerCta['label']) ?>
     </a>
 
     <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">

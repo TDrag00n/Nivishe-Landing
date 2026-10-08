@@ -57,6 +57,25 @@
     sections.forEach(function (section) { spy.observe(section); });
   }
 
+  /* --- Open a <details> that the URL points at ---------------------- */
+  var openFromHash = function () {
+    var hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+
+    var target;
+    try {
+      target = document.querySelector(hash);
+    } catch (e) {
+      return; // not a usable selector
+    }
+    if (!target) return;
+
+    var details = target.tagName === 'DETAILS' ? target : target.querySelector('details');
+    if (details) details.open = true;
+  };
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+
   /* --- Fade sections in as they arrive ----------------------------- */
   var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
