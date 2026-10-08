@@ -6,7 +6,7 @@
  * All editable content lives in includes/config.php.
  */
 
-define('PHL_APP', true);
+define('NIVISHE_APP', true);
 
 session_start();
 

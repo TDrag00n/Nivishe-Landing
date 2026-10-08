@@ -136,8 +136,10 @@ Applications themselves still go through the Google Form; this form is only for 
 
 ## 7. The careers page
 
-`careers.php` lists the open roles. It shares the header, footer, stylesheet and
-photographs with the Fellowship page, so there is nothing extra to upload.
+`careers.php` lists the open roles. It is a standalone page — it does not link to
+the Fellowship page and the Fellowship page does not link to it, so either can be
+published, shared or taken down without touching the other. They do share the
+header, footer, stylesheet and photographs, so there is nothing extra to upload.
 
 **All role content lives in `includes/jobs.php`** — one block per role, holding its
 title, engagement type, location, reporting line, application-form link and the

@@ -7,7 +7,7 @@
  * closing date, fill in 'closes' — it only appears on the page when set.
  */
 
-if (!defined('PHL_APP')) {
+if (!defined('NIVISHE_APP')) {
     http_response_code(403);
     exit('Direct access is not permitted.');
 }

@@ -3,7 +3,7 @@
  * Shared helpers. Loaded once from index.php.
  */
 
-if (!defined('PHL_APP')) {
+if (!defined('NIVISHE_APP')) {
     http_response_code(403);
     exit('Direct access is not permitted.');
 }

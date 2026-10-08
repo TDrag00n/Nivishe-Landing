@@ -6,7 +6,7 @@
  * (contact address, organisation name) comes from includes/config.php.
  */
 
-define('PHL_APP', true);
+define('NIVISHE_APP', true);
 
 $config = require __DIR__ . '/includes/config.php';
 require __DIR__ . '/includes/functions.php';
@@ -29,7 +29,6 @@ $navItems        = [
     '#roles'   => 'Open roles',
     '#apply'   => 'How to apply',
     '#contact' => 'Questions',
-    'index.php' => 'PHL Fellowship',
 ];
 $headerCta = ['label' => 'See open roles', 'url' => '#roles', 'external' => false];
 $ogImage   = [
@@ -71,7 +70,7 @@ $structuredData = [
 /* ---- footer ------------------------------------------------------------- */
 $footerTitle = 'Careers at ' . cfg('org_name');
 $footerDesc  = 'Open roles with the team behind Nivishe Foundation’s mental health, play and community programmes.';
-$footerLinks = ['#roles' => 'Open roles', '#apply' => 'How to apply', '#contact' => 'Questions', 'index.php' => 'PHL Fellowship 2026'];
+$footerLinks = ['#roles' => 'Open roles', '#apply' => 'How to apply', '#contact' => 'Questions'];
 $footerDataNote = 'Your information will be used only to assess your application, in line with '
     . e(cfg('org_name')) . '&rsquo;s data protection practices.';
 
@@ -270,16 +269,15 @@ require __DIR__ . '/includes/header.php';
         <p class="section-eyebrow">Questions</p>
         <h2 class="section-title">Ask before you apply</h2>
         <p class="section-intro">
-          For questions about any of these roles, write to
-          <a href="mailto:<?= e(cfg('contact_email')) ?>"><?= e(cfg('contact_email')) ?></a>.
-          Please put the role title in your subject line.
+          For questions about any of these roles, write to us. Please put the role title
+          in your subject line so your message reaches the right person.
         </p>
       </div>
 
-      <p class="note note-accent">
-        Looking for the Play for Healing and Learning Fellowship instead?
-        <a href="index.php">See the PHL Fellowship 2026 page</a> &mdash; that is a training
-        programme for teachers, caregivers and community leaders, not a staff role.
+      <p class="contact-cta reveal">
+        <a class="btn btn-primary btn-lg" href="mailto:<?= e(cfg('contact_email')) ?>">
+          <?= e(cfg('contact_email')) ?>
+        </a>
       </p>
     </div>
   </section>

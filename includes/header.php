@@ -1,5 +1,5 @@
 <?php
-if (!defined('PHL_APP')) {
+if (!defined('NIVISHE_APP')) {
     http_response_code(403);
     exit('Direct access is not permitted.');
 }
@@ -73,7 +73,7 @@ $structuredData ??= [
 
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/css/style.css?v=6">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 
 <script type="application/ld+json">
 <?= json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>

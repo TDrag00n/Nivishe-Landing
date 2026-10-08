@@ -6,7 +6,7 @@
  * lives in this one file. Edit it, save, upload. No other file needs touching.
  */
 
-if (!defined('PHL_APP')) {
+if (!defined('NIVISHE_APP')) {
     http_response_code(403);
     exit('Direct access is not permitted.');
 }

@@ -1,5 +1,5 @@
 <?php
-if (!defined('PHL_APP')) {
+if (!defined('NIVISHE_APP')) {
     http_response_code(403);
     exit('Direct access is not permitted.');
 }
@@ -14,7 +14,6 @@ $footerLinks ??= [
     '#eligibility' => 'Who should apply',
     '#apply'       => 'How to apply',
     '#faq'         => 'FAQs',
-    'careers.php'  => 'Careers',
 ];
 $footerDataNote ??= 'Your information will be used only to assess your application, in line with '
     . e(cfg('org_name')) . '&rsquo;s data protection practices.';
